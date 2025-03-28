@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Interface</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form action="process-login.php" method="post" class="login-form">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn">Login</button>
+        </form>
+        <div class="links">
+            <a href="forgot-password.html">Forgot Password?</a>
+            <a href="register.html">Register</a>
+        </div>
+    </div>
+
+    <script>
+        //   function saveCredentials() {
+        //     const username = document.getElementById('username').value;
+        //     const password = document.getElementById('password').value;
+
+        //     //create a string to store in the files
+        //     const data = `username: ${username}, Password: ${password}\n`;
+
+        //     //use the Blob API to create a downloadable file
+        //     const blob =new Blob([data], { type: 'text/plain'});
+        //     const link = document.createElement('a');
+        //     link.href = URL.createObjectURL(blob);
+        //     link.download = 'credentials.txt'; //File name
+        //     link.click();
+
+        //     alert('Credentials saved temporarily in a text file.');
+        //   }   
+
+
+        function loginUser() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Retrieve credentials from localStorage
+            const storedUsername = localStorage.getItem('username');
+            const storedPassword = localStorage.getItem('password');
+
+            // Validate credentials
+            if (username === storedUsername && password === storedPassword) {
+                alert('Login successful!');
+            } else {
+                alert('Invalid username or password.');
+            }
+        }
+    </script>
+</body>
+</html>

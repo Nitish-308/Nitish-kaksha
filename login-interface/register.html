@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="login-container">
+        <h1>Register</h1>
+        <form action="process-register.php" method="post" class="login-form">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn">Register</button>
+        </form>
+        <div class="links">
+            <a href="index.html">Back to Login</a>
+        </div>
+    </div>
+
+    <script>
+        // function saveRegistration() {
+        //     const username = document.getElementById('username').value;
+        //     const email = document.getElementById('email').value;
+        //     const password = document.getElementById('password').value;
+
+        //     // Create a string to store in the file
+        //     const data = `Username: ${username}, Email: ${email}, Password: ${password}\n`;
+
+        //     // Use the Blob API to create a downloadable file
+        //     const blob = new Blob([data], { type: 'text/plain' });
+        //     const link = document.createElement('a');
+        //     link.href = URL.createObjectURL(blob);
+        //     link.download = 'credentials.txt'; // File name
+        //     link.click();
+
+        //     alert('Registration details saved temporarily in a text file.');
+        // }
+
+        
+        function registerUser() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Save credentials in localStorage
+            localStorage.setItem('username', username);
+            localStorage.setItem('password', password);
+
+            alert('Registration successful! You can now log in.');
+        }
+
+
+
+    </script>
+
+
+</body>
+</html>
